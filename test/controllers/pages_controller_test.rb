@@ -1,6 +1,10 @@
 require "test_helper"
 
 class PagesControllerTest < ActionDispatch::IntegrationTest
+  test "canary" do
+    assert true
+  end
+
   test "should get home" do
     get home_path
     assert_response :success
