@@ -2,17 +2,26 @@ require "test_helper"
 
 class PagesControllerTest < ActionDispatch::IntegrationTest
   test "should get home" do
-    get pages_home_url
+    get home_path
     assert_response :success
   end
 
   test "should get made" do
-    get pages_made_url
+    get made_path
     assert_response :success
   end
 
   test "should get like" do
-    get pages_like_url
+    get like_path
     assert_response :success
+  end
+
+  test "should get root" do
+    get '/'
+    assert_response :success
+  end
+
+  test "root should get home" do
+    assert_recognizes({controller: 'pages', action: 'home'}, '/')
   end
 end
